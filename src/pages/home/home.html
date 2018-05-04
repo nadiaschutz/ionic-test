@@ -1,0 +1,28 @@
+<ion-header color="primary">
+  <ion-navbar>
+    <ion-item color="primary">
+         <ion-searchbar (ionInput)="searchBar($event)" id="head-left-top" ></ion-searchbar>
+          <ion-item id="head-right-top" >
+            <!--<ion-item id="head-right-top" *ngFor="let p of points" >-->
+             <!--<span class="myPointsNum" class="text-center medium" >{{this.p}}</span>-->
+             <span class="myPointsNum" class="text-center medium" >100</span>
+             <p class="myPointsText" class="text-center small" >Points</p>
+          </ion-item>
+         </ion-item>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p class="hiText">Hi there!</p>
+  <p class="hiText">Local spots for you today</p>
+  
+
+  <ion-slides class="image-slider" loop="true" slidesPerView="2">
+      <ion-slide *ngFor="let user of users">
+          <img [src]="this.user.businessImage" class="thumb-img">
+          <p class="business-name">{{this.user.businessName}}</p>
+      </ion-slide>
+  </ion-slides>
+
+  
+</ion-content>
